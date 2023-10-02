@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a31d5ef4e0820164aa9255b306e2345e
+guid: ffaac3957bd348549b33a871fa3c3e79
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: girl sprite sheet walk side_0
+      name: girlwalkLeftspritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0199e9c61de0b084b8aa8a58da9fda12
-      internalID: -1180300573
+      spriteID: 4562860e0df1f9f4ea171a6accf6d672
+      internalID: -176256530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: girl sprite sheet walk side_1
+      name: girlwalkLeftspritesheet_1
       rect:
         serializedVersion: 2
         x: 96
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2aecd44d5ff420a4897ca73f2166f929
-      internalID: 1564767821
+      spriteID: 814157fe65e84a445be35daab8186c9a
+      internalID: -176417588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: girl sprite sheet walk side_2
+      name: girlwalkLeftspritesheet_2
       rect:
         serializedVersion: 2
         x: 0
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00cd298b72cb7434db939b00f2a22234
-      internalID: -961688031
+      spriteID: 4de55aba4d688b44888a8e367afd664b
+      internalID: 214355935
       vertices: []
       indices: 
       edges: []
@@ -196,9 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      girl sprite sheet walk side_0: -1180300573
-      girl sprite sheet walk side_1: 1564767821
-      girl sprite sheet walk side_2: -961688031
+      girlwalkLeftspritesheet_0: -176256530
+      girlwalkLeftspritesheet_1: -176417588
+      girlwalkLeftspritesheet_2: 214355935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
