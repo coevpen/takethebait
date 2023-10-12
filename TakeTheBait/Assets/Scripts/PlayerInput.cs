@@ -6,12 +6,11 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject fishingRod;
-    //SpriteRenderer fishingRod;
-    fishingMechanic fishingStart;
+    [SerializeField] fishingMechanic fishingStart;
     // Start is called before the first frame update
     void Start()
     {
-    
+
     }
 
     // Update is called once per frame

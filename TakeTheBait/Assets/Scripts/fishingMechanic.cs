@@ -9,10 +9,10 @@ public class fishingMechanic : MonoBehaviour
     public void Start()
     {
        fishingGameStart();
-       Debug.Log("Fishing!");
     }
 
     public void fishingGameStart(){
+        Debug.Log("Fishing!");
         StartCoroutine(fishingGameStartRoutine());
 
         IEnumerator fishingGameStartRoutine(){
