@@ -936,6 +936,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1929621734260252035, guid: 57a1fd7461077ec44a0ddc5a4b81c2aa, type: 3}
   m_PrefabInstance: {fileID: 7958986850209283779}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &796550813
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796550808}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -5904246137241770547, guid: d8fdbd610ab8825459beef43ef3880af, type: 2}
+  m_audioClip: {fileID: 8300000, guid: b69c599288559af40b7162f7717aa71b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &938899141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13786,51 +13882,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1199140941
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1199140943}
-  - component: {fileID: 1199140942}
-  m_Layer: 0
-  m_Name: FishingMechanic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1199140942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199140941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f64ad872c62225b46bfecb8241690c8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishingRod: {fileID: 796550808}
---- !u!4 &1199140943
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199140941}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9290203, y: -1.3270698, z: 1.3557293}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1199913165
 GameObject:
   m_ObjectHideFlags: 0
@@ -14471,7 +14522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2062361645}
-  fishingStart: {fileID: 1199140942}
+  fishingRod: {fileID: 796550808}
 --- !u!1001 &1282362147611800423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14756,10 +14807,15 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6200493563976151239, guid: 57a1fd7461077ec44a0ddc5a4b81c2aa, type: 3}
+    - {fileID: 3941228672837859576, guid: 57a1fd7461077ec44a0ddc5a4b81c2aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1625028563218456726, guid: 57a1fd7461077ec44a0ddc5a4b81c2aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 796550813}
   m_SourcePrefab: {fileID: 100100000, guid: 57a1fd7461077ec44a0ddc5a4b81c2aa, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -14774,6 +14830,5 @@ SceneRoots:
   - {fileID: 1282362147611800423}
   - {fileID: 1821128058}
   - {fileID: 1199913166}
-  - {fileID: 1199140943}
   - {fileID: 1964426994}
   - {fileID: 244859834}
