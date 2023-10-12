@@ -16,7 +16,7 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.E)){
+        if((player.transform.position.y < -10.59042) & Input.GetKey(KeyCode.E)){
             fishingRod.GetComponent<SpriteRenderer>().enabled = true;
             fishingStart.Start();
         }
