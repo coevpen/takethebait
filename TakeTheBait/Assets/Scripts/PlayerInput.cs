@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] GameObject fishingRod;
+    //[SerializeField] GameObject fishingRod;
     [SerializeField] fishingMechanic fishingStart;
     // Start is called before the first frame update
     void Start()
@@ -16,9 +16,10 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((player.transform.position.y < -10.59042) & Input.GetKey(KeyCode.E)){
-            fishingRod.GetComponent<SpriteRenderer>().enabled = true;
+        if((player.transform.position.y < -10.59042)){
+
             fishingStart.Start();
         }
+
     }
 }
