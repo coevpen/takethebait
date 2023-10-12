@@ -24,7 +24,7 @@ public class SimpleMovementController : MonoBehaviour
         }else if(Input.GetKey(KeyCode.D)){
             vel.x = 1;
         }
-            //if(vel == 1) AnimationStateChanger.SetState("walkUp"); ?
+        
         movement.MoveTransform(vel);
     }
 }
