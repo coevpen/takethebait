@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuHandler : MonoBehaviour
 {
+
     public void PlayGame(){
-        SceneManager.LoadScene("FishingScene");
+
+    }
+
+    public void Settings(){
+        SceneManager.LoadScene("Settings");
     }
 
     public void QuitGame(){
