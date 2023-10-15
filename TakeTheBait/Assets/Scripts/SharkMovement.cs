@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class SharkMovement : MonoBehaviour
 {
     [SerializeField] float speed = 0.1f;
-    [SerializeField] GameObject fishingRod;
-    
     bool rodOut;
         // have shark hone in on fishing rod
         // if shark touches fishing rod before it is removed, game over

@@ -6,7 +6,6 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject fishingRod;
-    SpawnShark spawnShark;
     Score playerScore;
     GameObject Canvas;
     bool rodOut = false;
