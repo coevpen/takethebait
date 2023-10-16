@@ -9,8 +9,6 @@ public class MenuMusic : MonoBehaviour
 
     // audio clips
     private AudioSource audioSource;
-    public AudioClip MenuSong;
-    public AudioClip beachSong;
 
     // checking for scene loaded
     private string lastScene;
@@ -36,7 +34,6 @@ public class MenuMusic : MonoBehaviour
     void Update(){
         currentScene = SceneManager.GetActiveScene().name;
         if(currentScene != lastScene){
-            lastScene = currentScene;
             songChange();
         }
     }
@@ -44,13 +41,17 @@ public class MenuMusic : MonoBehaviour
 
     void songChange(){
 
-        if(lastScene == "MainMenu" || lastScene == "Settings"){
-            //audioSource.PlayOneShot(MenuSong, 0.5f);
-            audioSource.GetComponent<AudioSource>().Play();
+        if((lastScene == "MainMenu" || lastScene == "Settings") && (currentScene == "MainMenu" || currentScene == "Settings")){
+            lastScene = currentScene;
         }
-        else if(lastScene == "FishingScene"){
+        else if(lastScene == "MainMenu" && currentScene == "FishingScene"){
             audioSource.Stop();
-            //audioSource.PlayOneShot(beachSong);
+            lastScene = currentScene;
+        }
+        else if(lastScene == "FishingScene" && currentScene == "MainMenu"){
+            audioSource.Stop();
+            audioSource.GetComponent<AudioSource>().Play();
+            lastScene = currentScene;
         }
 
     }

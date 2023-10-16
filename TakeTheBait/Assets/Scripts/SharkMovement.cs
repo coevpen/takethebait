@@ -18,7 +18,7 @@ public class SharkMovement : MonoBehaviour
     {
         //if the rod is in the water, the shark moves towards it
         if(fishingRod.GetComponent<SpriteRenderer>().enabled == true){
-            transform.position = Vector3.MoveTowards(transform.position,fishingRod.transform.position,speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(fishingRod.transform.position,transform.position,speed * Time.deltaTime);
         }
         else{//otherwise the shark swims off to the left of the screen
            transform.position += new Vector3(speed * Time.deltaTime,0,0);
