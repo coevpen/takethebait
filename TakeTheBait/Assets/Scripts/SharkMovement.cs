@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SharkMovement : MonoBehaviour
 {
-    [SerializeField] float speed = 0.3f;
+    [SerializeField] float speed = 1f;
     GameObject MainChar;
     GameObject fishingRod;
 
@@ -18,10 +18,11 @@ public class SharkMovement : MonoBehaviour
     {
         //if the rod is in the water, the shark moves towards it
         if(fishingRod.GetComponent<SpriteRenderer>().enabled == true){
-            transform.position = Vector3.MoveTowards(fishingRod.transform.position,transform.position,speed * Time.deltaTime);
+            Vector3 vel = Vector3.Normalize(fishingRod.transform.position - transform.position);
+            transform.position += vel * speed;
         }
-        else{//otherwise the shark swims off to the left of the screen
-           transform.position += new Vector3(speed * Time.deltaTime,0,0);
+        else{//otherwise the shark swims off to the side of the screen
+           transform.position += new Vector3((speed * Time.deltaTime) * 20,0,0);
         }
     }
 

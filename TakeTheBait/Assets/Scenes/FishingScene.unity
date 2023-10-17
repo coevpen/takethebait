@@ -14976,6 +14976,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: fishingRod
       objectReference: {fileID: 0}
+    - target: {fileID: 1806990465669759141, guid: 57a1fd7461077ec44a0ddc5a4b81c2aa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1929621734260252035, guid: 57a1fd7461077ec44a0ddc5a4b81c2aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.67
