@@ -593,7 +593,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 5084454052887560802, guid: d8fdbd610ab8825459beef43ef3880af, type: 2}
   m_audioClip: {fileID: 8300000, guid: 11b9f859adbe2104882a5056ecf10bb2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.663
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1075,10 +1075,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1460,6 +1460,18 @@ PrefabInstance:
     - target: {fileID: 5322150737182597565, guid: 12cf64b4594713847ac18c0cde4d7722, type: 3}
       propertyPath: m_Name
       value: FadeImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083265424504468200, guid: 12cf64b4594713847ac18c0cde4d7722, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083265424504468200, guid: 12cf64b4594713847ac18c0cde4d7722, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083265424504468200, guid: 12cf64b4594713847ac18c0cde4d7722, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 7222542317999391285, guid: 12cf64b4594713847ac18c0cde4d7722, type: 3}
       propertyPath: m_Name
