@@ -7,7 +7,7 @@ public class SharkMovement : MonoBehaviour
 {
     [SerializeField] float speed = 0.3f;
     GameObject MainChar;
-    GameObject  fishingRod;
+    GameObject fishingRod;
 
     void Awake(){
         MainChar = GameObject.Find("MainChar");

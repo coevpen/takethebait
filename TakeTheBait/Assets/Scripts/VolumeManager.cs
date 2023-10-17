@@ -11,7 +11,7 @@ public class VolumeManager : MonoBehaviour
 
     void Start(){
         if(!PlayerPrefs.HasKey("masterVolume")){
-            PlayerPrefs.SetFloat("masterVolume", Mathf.Log10(volumeSlider.value) * 2);
+            PlayerPrefs.SetFloat("masterVolume", Mathf.Log10(volumeSlider.value) * 20);
             LoadPrefs();
         }
     }
