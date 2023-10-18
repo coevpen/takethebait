@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class SpawnShark : MonoBehaviour
 {
-    [SerializeField] GameObject sharkPrefab;
+    [SerializeField] public GameObject sharkPrefab;
     GameObject newShark;
-    [SerializeField] GameObject fishingRod;
+    // to get the user's rodOut bool
+    public PlayerInput player;
+    public GameObject MainChar;
+
+    void Awake(){
+        player = MainChar.GetComponent<PlayerInput>();
+    }
    
    
     void Update(){
-        if(fishingRod.GetComponent<SpriteRenderer>().enabled == true && newShark == null){
-            //SpawnSharkWhenFishing();
+        if(player.rodOut && newShark == null){
             newShark = Instantiate(sharkPrefab, new Vector3(3.031f,-12.91f,0), Quaternion.identity);
-        }else if((fishingRod.GetComponent<SpriteRenderer>().enabled == false) && (newShark != null)){
+        }else if(!player.rodOut && (newShark != null)){
             SharkDestroy();
         }
     }
 
     public void SharkDestroy(){
         // shark leaves the screen and destroys
-        //once we give AI to shark, implenet if statement.
         if(newShark.transform.position.x >= 10.49 || newShark.transform.position.x <= -10.56){
             Destroy(newShark);
         }

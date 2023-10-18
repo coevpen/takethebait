@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour
     Score playerScore;
     GameObject Canvas;
     GameObject pauseLabel;
-    bool rodOut = false;
+    public bool rodOut = false;
     bool isPaused = false;
     float previousTimeScale;
 
@@ -33,7 +33,7 @@ public class PlayerInput : MonoBehaviour
             fishingGameStart();
         }
         //if the player presses escape, the game pauses.
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if(Input.GetKeyDown(KeyCode.Q)){
             TogglePause();
         }
 

@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] Transform body;
     protected Rigidbody2D rb;
 
+
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
     }
@@ -23,9 +24,9 @@ public class Movement : MonoBehaviour
             animationStateChanger?.ChangeAnimationState("WalkRight");
 
             if(vel.x > 0){
-                body.localScale = new Vector3(1,1,1);
-            }else if(vel.x < 0){
                 body.localScale = new Vector3(-1,1,1);
+            }else if(vel.x < 0){
+                body.localScale = new Vector3(1,1,1);
             }
 
         }else{

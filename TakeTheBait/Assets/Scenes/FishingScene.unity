@@ -496,7 +496,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharkPrefab: {fileID: 5709297795489204914, guid: 3b75eb4b0d63ca54e8360a9876792466, type: 3}
-  fishingRod: {fileID: 796550808}
+  player: {fileID: 0}
+  MainChar: {fileID: 2062361645}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -14748,6 +14749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2062361645}
   fishingRod: {fileID: 796550808}
+  rodOut: 0
 --- !u!1001 &1282362147611800423
 PrefabInstance:
   m_ObjectHideFlags: 0
