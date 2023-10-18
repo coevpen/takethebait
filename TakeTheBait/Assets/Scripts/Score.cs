@@ -12,8 +12,8 @@ public class Score : MonoBehaviour
         scoreTxt = GetComponent<Text>();
     }
 
-    public void ScoreIncrease(){
-        scoreCount += 1;
+    public void ScoreIncrease(int val){
+        scoreCount += val;
         scoreTxt.text = scoreCount.ToString();
     }
 

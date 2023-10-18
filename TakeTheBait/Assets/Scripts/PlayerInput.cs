@@ -14,6 +14,11 @@ public class PlayerInput : MonoBehaviour
     bool isPaused = false;
     float previousTimeScale;
 
+    //for fishing game
+    int upperBound = 0;
+    int lowerBound = 17;
+    int points = 0;
+
     void Awake(){
         Canvas = GameObject.Find("Canvas");
         pauseLabel = Canvas.transform.GetChild(2).gameObject;
@@ -63,10 +68,24 @@ public class PlayerInput : MonoBehaviour
                     rodOut = true;
                     fishingRod.GetComponent<SpriteRenderer>().enabled = true;
                     fishingRod.GetComponent<AudioSource>().Play();
+
+                    yield return new WaitForSeconds(Random.Range(1,10));
+                    int randFish = Random.Range(lowerBound,upperBound);
+                    if(randFish >= 0 && randFish <=10){
+                        points = 1;
+                    }else if(randFish >= 11 && randFish <= 15){
+                        points = 2;
+                    }else if(randFish >= 16 && randFish <= 17){
+                        points = 4;
+                    }
+                    //play ! animation
+                    // if rod out within 2 seconds, playerscore.ScoreIncrease(); by alloted points
                 }else{
                     if(!isPaused){
                         rodOut = false;
-                        playerScore.ScoreIncrease();
+                        if(points > 0){
+                            playerScore.ScoreIncrease(points);
+                        }
                         fishingRod.GetComponent<SpriteRenderer>().enabled = false;
                     }
 
