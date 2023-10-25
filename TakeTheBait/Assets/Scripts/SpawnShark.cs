@@ -9,6 +9,7 @@ public class SpawnShark : MonoBehaviour
     // to get the user's rodOut bool
     public PlayerInput player;
     public GameObject MainChar;
+    public bool sharkExists = false;
 
     void Awake(){
         player = MainChar.GetComponent<PlayerInput>();
@@ -16,17 +17,39 @@ public class SpawnShark : MonoBehaviour
    
    
     void Update(){
-        if(player.rodOut && newShark == null){
-            newShark = Instantiate(sharkPrefab, new Vector3(3.031f,-12.91f,0), Quaternion.identity);
-        }else if(!player.rodOut && (newShark != null)){
-            SharkDestroy();
+        // if(player.rodOut && newShark == null){
+        //     newShark = Instantiate(sharkPrefab, new Vector3(Random.Range(16.19f,-22.34f),Random.Range(-13.37f,-19.15f),0), Quaternion.identity);
+        // }else if(!player.rodOut && (newShark != null)){
+        //     SharkDestroy();
+        // }
+        if(player.rodOut && !sharkExists){
+            Invoke("SpawnSharkRandom",Random.Range(3,6));
+        }
+
+
+    }
+
+    void SpawnSharkRandom(){
+        StartCoroutine(SpawnSharkRandomCoR());
+        IEnumerator SpawnSharkRandomCoR(){
+            if(player.rodOut && !sharkExists){
+                newShark = Instantiate(sharkPrefab, new Vector3(Random.Range(16.19f,-22.34f),Random.Range(-13.37f,-19.15f),0), Quaternion.identity);
+                sharkExists = true;
+            }
+            if(!player.rodOut)
+            {
+                SharkDestroy();
+            }
+            yield return null;
         }
     }
 
+
     public void SharkDestroy(){
-        // shark leaves the screen and destroys
-        if(newShark.transform.position.x >= 10.49 || newShark.transform.position.x <= -10.56){
+        // shark leaves the screen and destroys   10.49
+        if(sharkExists && newShark.transform.position.x >= 16.19 || newShark.transform.position.x <= -22.34){
             Destroy(newShark);
+            sharkExists = false;
         }
     }
     

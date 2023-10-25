@@ -79,7 +79,6 @@ public class PlayerInput : MonoBehaviour
                         points = 4;
                     }
                     //play ! animation
-                    // if rod out within 2 seconds, playerscore.ScoreIncrease(); by alloted points
                 }else{
                     if(!isPaused){
                         rodOut = false;
