@@ -10,6 +10,8 @@ public class PlayerInput : MonoBehaviour
     Score playerScore;
     GameObject Canvas;
     GameObject pauseLabel;
+    GameObject MainChar;
+    GameObject exclaim;
     public bool rodOut = false;
     bool isPaused = false;
     float previousTimeScale;
@@ -23,6 +25,8 @@ public class PlayerInput : MonoBehaviour
         Canvas = GameObject.Find("Canvas");
         pauseLabel = Canvas.transform.GetChild(2).gameObject;
         playerScore = Canvas.GetComponentInChildren<Score>();
+        MainChar = GameObject.Find("MainChar");
+        exclaim = MainChar.transform.GetChild(2).gameObject;
     }
 
     // Start is called before the first frame update
@@ -78,7 +82,7 @@ public class PlayerInput : MonoBehaviour
                     }else if(randFish >= 16 && randFish <= 17){
                         points = 4;
                     }
-                    //play ! animation
+                    exclaim.GetComponent<SpriteRenderer>().enabled = true;
                 }else{
                     if(!isPaused){
                         rodOut = false;
@@ -86,6 +90,7 @@ public class PlayerInput : MonoBehaviour
                             playerScore.ScoreIncrease(points);
                         }
                         fishingRod.GetComponent<SpriteRenderer>().enabled = false;
+                        exclaim.GetComponent<SpriteRenderer>().enabled = false;
                     }
 
                 }
