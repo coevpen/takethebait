@@ -23,7 +23,7 @@ public class SpawnShark : MonoBehaviour
         //     SharkDestroy();
         // }
         if(player.rodOut && !sharkExists){
-            Invoke("SpawnSharkRandom",Random.Range(3,6));
+            Invoke("SpawnSharkRandom",Random.Range(3,15));
         }
 
 
@@ -36,8 +36,7 @@ public class SpawnShark : MonoBehaviour
                 newShark = Instantiate(sharkPrefab, new Vector3(Random.Range(16.19f,-22.34f),Random.Range(-13.37f,-19.15f),0), Quaternion.identity);
                 sharkExists = true;
             }
-            if(!player.rodOut)
-            {
+            if(!player.rodOut && sharkExists){
                 SharkDestroy();
             }
             yield return null;

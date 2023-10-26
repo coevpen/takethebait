@@ -15,6 +15,7 @@ public class PlayerInput : MonoBehaviour
     public bool rodOut = false;
     bool isPaused = false;
     float previousTimeScale;
+    bool fish = false;
 
     //for fishing game
     int upperBound = 0;
@@ -36,17 +37,16 @@ public class PlayerInput : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         if((player.transform.position.y < -10.32)){
             fishingGameStart();
         }
+            
         //if the player presses escape, the game pauses.
         if(Input.GetKeyDown(KeyCode.Q)){
             TogglePause();
         }
-
-    }
+    }   
 
     void TogglePause(){
         if(Time.timeScale > 0){
@@ -73,7 +73,8 @@ public class PlayerInput : MonoBehaviour
                     fishingRod.GetComponent<SpriteRenderer>().enabled = true;
                     fishingRod.GetComponent<AudioSource>().Play();
 
-                    yield return new WaitForSeconds(Random.Range(1,10));
+                    yield return new WaitForSeconds(Random.Range(3,12));
+                    fish = false;
                     int randFish = Random.Range(lowerBound,upperBound);
                     if(randFish >= 0 && randFish <=10){
                         points = 1;
@@ -82,15 +83,23 @@ public class PlayerInput : MonoBehaviour
                     }else if(randFish >= 16 && randFish <= 17){
                         points = 4;
                     }
-                    exclaim.GetComponent<SpriteRenderer>().enabled = true;
+                    fish = true;
+                    if(fish && rodOut){
+                        exclaim.GetComponent<SpriteRenderer>().enabled = true;
+                    }
+                    
                 }else{
                     if(!isPaused){
                         rodOut = false;
-                        if(points > 0){
+                        if(fish && !rodOut){
                             playerScore.ScoreIncrease(points);
                         }
-                        fishingRod.GetComponent<SpriteRenderer>().enabled = false;
-                        exclaim.GetComponent<SpriteRenderer>().enabled = false;
+                        if(!rodOut){
+                            fishingRod.GetComponent<SpriteRenderer>().enabled = false;
+                            exclaim.GetComponent<SpriteRenderer>().enabled = false;
+                        }
+                        fish = false;
+                        
                     }
 
                 }
