@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class PlayerInput : MonoBehaviour
         playerScore = Canvas.GetComponentInChildren<Score>();
         MainChar = GameObject.Find("MainChar");
         exclaim = MainChar.transform.GetChild(2).gameObject;
+        pauseLabel.GetComponent<TextMeshProUGUI>().enabled = false;
     }
 
     // Start is called before the first frame update
@@ -53,12 +55,12 @@ public class PlayerInput : MonoBehaviour
             previousTimeScale = Time.timeScale;
             Time.timeScale = 0;
             AudioListener.pause = true;
-            pauseLabel.GetComponent<Text>().enabled = true;
+            pauseLabel.GetComponent<TextMeshProUGUI>().enabled = true;
             isPaused = true;
         }else if(Time.timeScale == 0){
             Time.timeScale = previousTimeScale;
             AudioListener.pause = false;
-            pauseLabel.GetComponent<Text>().enabled = false;
+            pauseLabel.GetComponent<TextMeshProUGUI>().enabled = false;
             isPaused = false;
         }
     }
