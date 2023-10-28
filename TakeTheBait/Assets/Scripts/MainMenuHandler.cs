@@ -10,17 +10,6 @@ public class MainMenuHandler : MonoBehaviour
         SceneManager.LoadScene("ChooseScene");
     }
 
-    // public void Beach(){
-    //     SceneManager.LoadScene("FishingScene");
-    // }
-    // public void Forest(){
-    //     SceneManager.LoadScene("ForestScene");
-    // }
-
-    // public void Cave(){
-    //     SceneManager.LoadScene("CaveScene");
-    // }
-
     public void Settings(){
         SceneManager.LoadScene("Settings");
     }

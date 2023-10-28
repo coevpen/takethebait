@@ -17,16 +17,12 @@ public class SpawnShark : MonoBehaviour
    
    
     void Update(){
-        // if(player.rodOut && newShark == null){
-        //     newShark = Instantiate(sharkPrefab, new Vector3(Random.Range(16.19f,-22.34f),Random.Range(-13.37f,-19.15f),0), Quaternion.identity);
-        // }else if(!player.rodOut && (newShark != null)){
-        //     SharkDestroy();
-        // }
+        //currentScene = SceneManager.GetActiveScene().name;
+        //if currentScene == "FishingScene" do ~~
+        //if currentScene == "ForestScene" do ~~~
         if(player.rodOut && !sharkExists){
             Invoke("SpawnSharkRandom",Random.Range(3,15));
         }
-
-
     }
 
     void SpawnSharkRandom(){
