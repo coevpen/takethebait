@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     GameObject pauseLabel;
     GameObject MainChar;
     GameObject exclaim;
+    GameObject pmenu;
     public bool rodOut = false;
     bool isPaused = false;
     float previousTimeScale;
@@ -30,12 +31,8 @@ public class PlayerInput : MonoBehaviour
         MainChar = GameObject.Find("MainChar");
         exclaim = MainChar.transform.GetChild(2).gameObject;
         pauseLabel.GetComponent<TextMeshProUGUI>().enabled = false;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
+        pmenu = GameObject.Find("PauseMenu");
+        pmenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,11 +53,13 @@ public class PlayerInput : MonoBehaviour
             Time.timeScale = 0;
             AudioListener.pause = true;
             pauseLabel.GetComponent<TextMeshProUGUI>().enabled = true;
+            pmenu.SetActive(true);
             isPaused = true;
         }else if(Time.timeScale == 0){
             Time.timeScale = previousTimeScale;
             AudioListener.pause = false;
             pauseLabel.GetComponent<TextMeshProUGUI>().enabled = false;
+            pmenu.SetActive(false);
             isPaused = false;
         }
     }

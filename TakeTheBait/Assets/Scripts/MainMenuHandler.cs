@@ -10,6 +10,10 @@ public class MainMenuHandler : MonoBehaviour
         SceneManager.LoadScene("ChooseScene");
     }
 
+    public void Return(){
+        SceneManager.LoadScene(0);
+    }
+
     public void Settings(){
         SceneManager.LoadScene("Settings");
     }

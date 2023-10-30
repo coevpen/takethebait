@@ -9,8 +9,12 @@ public class SceneFader : MonoBehaviour
     [SerializeField] Image fadeImage;
     [SerializeField] float fadeTime = 3;
 
-    void Start(){
+    void Awake(){
         FadeIn();
+    }
+
+    void Start(){
+        Time.timeScale = 1f;
     }
 
     public void FadeIn(){
