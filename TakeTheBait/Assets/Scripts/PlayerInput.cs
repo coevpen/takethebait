@@ -14,11 +14,13 @@ public class PlayerInput : MonoBehaviour
     GameObject MainChar;
     GameObject exclaim;
     GameObject pmenu;
+    public GameObject[] fishPic;
     public bool rodOut = false;
     bool isPaused = false;
     float previousTimeScale;
     bool fish = false;
     string fishSize;
+    int k; //iterator
 
     //for fishing game
     int upperBound = 0;
@@ -32,6 +34,12 @@ public class PlayerInput : MonoBehaviour
         exclaim = MainChar.transform.GetChild(2).gameObject;
         pmenu = GameObject.Find("QuitOption");
         pmenu.SetActive(false);
+        fishPic = new GameObject[4];
+        k = 0;
+        for(int i = 3; i < 6; i++){
+            fishPic[k] = MainChar.transform.GetChild(i).gameObject;
+            k++;
+        }
     }
 
     // Update is called once per frame
@@ -71,6 +79,10 @@ public class PlayerInput : MonoBehaviour
                     fishingRod.GetComponent<SpriteRenderer>().enabled = true;
                     fishingRod.GetComponent<AudioSource>().Play();
 
+                    fishPic[0].GetComponent<SpriteRenderer>().enabled = false;
+                    fishPic[1].GetComponent<SpriteRenderer>().enabled = false;
+                    fishPic[2].GetComponent<SpriteRenderer>().enabled = false;
+
                     yield return new WaitForSeconds(Random.Range(3,12));
                     fish = false;
                     int randFish = Random.Range(lowerBound,upperBound);
@@ -93,6 +105,21 @@ public class PlayerInput : MonoBehaviour
                     if(!isPaused){
                         rodOut = false;
                         if(fish && !rodOut){
+                            if(fishSize == "small"){ 
+                                fishPic[0].GetComponent<SpriteRenderer>().enabled = true;
+                                fishPic[1].GetComponent<SpriteRenderer>().enabled = false;
+                                fishPic[2].GetComponent<SpriteRenderer>().enabled = false;
+                            }
+                            else if(fishSize == "medium"){
+                                fishPic[0].GetComponent<SpriteRenderer>().enabled = false;
+                                fishPic[1].GetComponent<SpriteRenderer>().enabled = true;
+                                fishPic[2].GetComponent<SpriteRenderer>().enabled = false;
+                            }
+                            else if(fishSize == "large"){
+                                fishPic[0].GetComponent<SpriteRenderer>().enabled = false;
+                                fishPic[1].GetComponent<SpriteRenderer>().enabled = false;
+                                fishPic[2].GetComponent<SpriteRenderer>().enabled = true;
+                            }
                             playerScore.ScoreIncrease(points);
                         }
                         if(!rodOut){
