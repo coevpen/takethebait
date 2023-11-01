@@ -49,7 +49,7 @@ public class MenuMusic : MonoBehaviour
             lastScene = currentScene;
         }
         else if(lastScene == "FishingScene" && currentScene == "MainMenu"){
-            audioSource.Stop();
+            //audioSource.Stop();
             audioSource.GetComponent<AudioSource>().Play();
             lastScene = currentScene;
         }

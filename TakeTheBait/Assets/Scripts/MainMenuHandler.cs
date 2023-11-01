@@ -11,7 +11,7 @@ public class MainMenuHandler : MonoBehaviour
     }
 
     public void Return(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Settings(){

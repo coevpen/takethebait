@@ -18,6 +18,7 @@ public class PlayerInput : MonoBehaviour
     bool isPaused = false;
     float previousTimeScale;
     bool fish = false;
+    string fishSize;
 
     //for fishing game
     int upperBound = 0;
@@ -26,12 +27,10 @@ public class PlayerInput : MonoBehaviour
 
     void Awake(){
         Canvas = GameObject.Find("Canvas");
-        pauseLabel = Canvas.transform.GetChild(2).gameObject;
         playerScore = Canvas.GetComponentInChildren<Score>();
         MainChar = GameObject.Find("MainChar");
         exclaim = MainChar.transform.GetChild(2).gameObject;
-        pauseLabel.GetComponent<TextMeshProUGUI>().enabled = false;
-        pmenu = GameObject.Find("PauseMenu");
+        pmenu = GameObject.Find("QuitOption");
         pmenu.SetActive(false);
     }
 
@@ -52,13 +51,11 @@ public class PlayerInput : MonoBehaviour
             previousTimeScale = Time.timeScale;
             Time.timeScale = 0;
             AudioListener.pause = true;
-            pauseLabel.GetComponent<TextMeshProUGUI>().enabled = true;
             pmenu.SetActive(true);
             isPaused = true;
         }else if(Time.timeScale == 0){
             Time.timeScale = previousTimeScale;
             AudioListener.pause = false;
-            pauseLabel.GetComponent<TextMeshProUGUI>().enabled = false;
             pmenu.SetActive(false);
             isPaused = false;
         }
@@ -79,10 +76,13 @@ public class PlayerInput : MonoBehaviour
                     int randFish = Random.Range(lowerBound,upperBound);
                     if(randFish >= 0 && randFish <=10){
                         points = 1;
+                        fishSize = "small";
                     }else if(randFish >= 11 && randFish <= 15){
                         points = 2;
+                        fishSize = "medium";
                     }else if(randFish >= 16 && randFish <= 17){
                         points = 4;
+                        fishSize = "large";
                     }
                     fish = true;
                     if(fish && rodOut){
