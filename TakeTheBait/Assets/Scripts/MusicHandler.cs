@@ -44,11 +44,11 @@ public class MenuMusic : MonoBehaviour
         if((lastScene == "MainMenu" || lastScene == "Settings") && (currentScene == "MainMenu" || currentScene == "Settings")){
             lastScene = currentScene;
         }
-        else if(lastScene == "MainMenu" && currentScene == "FishingScene"){
+        else if(lastScene == "MainMenu" && (currentScene == "FishingScene" || currentScene == "ForestScene" || currentScene == "CaveScene")){
             audioSource.Stop();
             lastScene = currentScene;
         }
-        else if(lastScene == "FishingScene" && currentScene == "MainMenu"){
+        else if((lastScene == "FishingScene" || lastScene == "ForestScene" || lastScene == "CaveScene") && currentScene == "MainMenu"){
             //audioSource.Stop();
             audioSource.GetComponent<AudioSource>().Play();
             lastScene = currentScene;
