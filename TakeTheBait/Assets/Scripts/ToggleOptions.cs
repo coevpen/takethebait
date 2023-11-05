@@ -41,7 +41,7 @@ public class ToggleOptions : MonoBehaviour
     }
 
     public void ToggleScreen(){
-        fullScreenToggle.isOn = Screen.fullScreen;
+        Screen.fullScreen = !Screen.fullScreen;
     }
     
     public void VsyncToggle(){

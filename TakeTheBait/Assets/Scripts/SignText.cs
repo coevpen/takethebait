@@ -12,12 +12,14 @@ public class SignText : MonoBehaviour
     [SerializeField] private GameObject Ttext;
     [SerializeField] private GameObject TtextButton1;
     [SerializeField] private GameObject TtextButton2;
+    [SerializeField] private GameObject TtextButton3;
 
     void Awake(){
         TextBox.GetComponent<SpriteRenderer>().enabled = false;
         Ttext.GetComponent<TextMeshProUGUI>().enabled = false;
         TtextButton1.GetComponent<TextMeshProUGUI>().enabled = false;
         TtextButton2.GetComponent<TextMeshProUGUI>().enabled = false;
+        TtextButton3.GetComponent<TextMeshProUGUI>().enabled = false;
     }
     
     void OnTriggerEnter2D(Collider2D other){
@@ -25,6 +27,7 @@ public class SignText : MonoBehaviour
         Ttext.GetComponent<TextMeshProUGUI>().enabled = true;
         TtextButton1.GetComponent<TextMeshProUGUI>().enabled = true;
         TtextButton2.GetComponent<TextMeshProUGUI>().enabled = true;
+        TtextButton3.GetComponent<TextMeshProUGUI>().enabled = true;
     }
 
     void OnTriggerExit2D(Collider2D other) {
@@ -32,5 +35,6 @@ public class SignText : MonoBehaviour
         Ttext.GetComponent<TextMeshProUGUI>().enabled = false;
         TtextButton1.GetComponent<TextMeshProUGUI>().enabled = false;
         TtextButton2.GetComponent<TextMeshProUGUI>().enabled = false;
+        TtextButton3.GetComponent<TextMeshProUGUI>().enabled = false;
     }
 }
