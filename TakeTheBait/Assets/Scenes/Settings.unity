@@ -3390,8 +3390,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Score, Assembly-CSharp
+      - m_Target: {fileID: 166953394}
+        m_TargetAssemblyTypeName: HighScoreReset, Assembly-CSharp
         m_MethodName: Reset
         m_Mode: 1
         m_Arguments:
