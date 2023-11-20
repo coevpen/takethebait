@@ -17,9 +17,6 @@ public class SpawnShark : MonoBehaviour
    
    
     void Update(){
-        //currentScene = SceneManager.GetActiveScene().name;
-        //if currentScene == "FishingScene" do ~~
-        //if currentScene == "ForestScene" do ~~~
         if(player.rodOut && !sharkExists){
             Invoke("SpawnSharkRandom",Random.Range(3,15));
         }

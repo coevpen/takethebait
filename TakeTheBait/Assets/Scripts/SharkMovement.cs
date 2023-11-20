@@ -39,7 +39,7 @@ public class SharkMovement : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other){
+    public void OnTriggerEnter2D(Collider2D other){
         //if shark touches fishing rod, game over
         SceneManager.LoadScene("MainMenu");
     }

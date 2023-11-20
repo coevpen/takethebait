@@ -16,6 +16,8 @@ public class MenuMusic : MonoBehaviour
 
 
     void Awake(){
+        AudioListener.pause = false;
+        Time.timeScale = 1;
         if(instance != null){
             Destroy(gameObject);
         }else{
@@ -53,7 +55,6 @@ public class MenuMusic : MonoBehaviour
             audioSource.GetComponent<AudioSource>().Play();
             lastScene = currentScene;
         }
-
     }
 
 }
