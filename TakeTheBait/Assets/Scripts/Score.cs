@@ -6,7 +6,6 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    //Text scoreTxt;
     public TMPro.TextMeshProUGUI scoreTxt;
     public TMPro.TextMeshProUGUI highScoreTxt;
     GameObject canvas;
@@ -15,7 +14,6 @@ public class Score : MonoBehaviour
     int scoreCount = 0;
 
     void Awake(){
-        //scoreTxt = GetComponent<TextMeshProUGUI>();
         canvas = GameObject.Find("Canvas");
         score = canvas.transform.GetChild(1).gameObject;
         hiscore = canvas.transform.GetChild(3).gameObject;
